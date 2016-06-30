@@ -36,3 +36,18 @@ mix phoenix.server
 ```
 
 This repo is generated with `mix phoenix.new my_app --no-brunch --no-ecto --no-html` to run into less dependency issues.
+
+We then need to add the mix package exrm by adding it to `mix.exs`:
+
+```elixir
+def deps do
+  […, {:exrm, "~> 1.0.6"}]
+end
+```
+
+You should now be able to release your app with:
+
+```sh
+MIX_ENV=prod mix do compile, release
+rel/my_app/bin/my_app console # to see that it works
+```
