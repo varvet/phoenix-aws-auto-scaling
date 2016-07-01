@@ -7,5 +7,6 @@ defmodule MyApp.Router do
 
   scope "/api", MyApp do
     pipe_through :api
+    get "/health", HealthController, :show
   end
 end
